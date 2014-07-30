@@ -12,5 +12,8 @@ class MoviesController < ApplicationController
 	def cast_member
 		@castmember= CastMember.find params[:id]
 		@filmsof = @castmember.movies
+	rescue
+		@movies = Movie.order(year: :asc).limit(10)
+		render 'index'
 	end
 end

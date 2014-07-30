@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+body {background-color: #A901DB; font-family: "Lobster";}
+table {border: 2px #0B610B solid; background-color: #82FA58; margin-right: auto; margin-left: auto;}
+td {border: 2px #0B610B solid;}

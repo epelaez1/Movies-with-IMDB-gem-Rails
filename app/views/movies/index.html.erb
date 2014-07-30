@@ -2,14 +2,14 @@
 	<tr>
 	<% @movies.each do |movie|%>
 	
-		<td><img src="<%= movie.poster %>" style="width:100px; height:150px;"/></td>
+		<td><a href=<%= movie.id %>><img src="<%= movie.poster %>" style="width:100px; height:150px;"/></a></td>
 	
 	<% end %>
 	</tr>
 	<tr>
 	<% @movies.each do |movie|%>
 	
-		<td><p style="text-align:center;"><%= movie.name %></p></td>
+		<td><a href=<%= movie.id%>><p style="text-align:center;"><%= movie.name %></p></a></td>
 	
 	<% end %>
 	</tr>
