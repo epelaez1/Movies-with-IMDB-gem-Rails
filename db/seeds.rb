@@ -4,11 +4,13 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'imdb'
-search = Imdb::Search.new('Matrix')
-collect = search.movies[0..49].collect{ |m| [m.title , m.plot, m.poster, m.year]}
-collect.each do |a|
-	Movie.create(name: a[0], plot: a[1], poster: a[2], year: a[3])
-end
+ search = Imdb::Search.new('Bruce Willis')
+ movies = search.movies[0..49].collect{ |m| [m.title , m.plot, m.poster, m.year, m.cast_members]}
+ movies.each do |movie|
+ 	my_movie = Movie.create(name: movie[0], plot: movie[1], poster: movie[2], year: movie[3])
+ 	movie[4].each do |actorname|
+ 		my_movie.cast_members << CastMember.find_or_create_by(name: actorname)		
+ 	end
+ end

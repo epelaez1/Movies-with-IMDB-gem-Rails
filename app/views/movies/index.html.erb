@@ -1,0 +1,17 @@
+<table border= "1px">
+	<tr>
+	<% @movies.each do |movie|%>
+	
+		<td><img src="<%= movie.poster %>" style="width:100px; height:150px;"/></td>
+	
+	<% end %>
+	</tr>
+	<tr>
+	<% @movies.each do |movie|%>
+	
+		<td><p style="text-align:center;"><%= movie.name %></p></td>
+	
+	<% end %>
+	</tr>
+
+</table>

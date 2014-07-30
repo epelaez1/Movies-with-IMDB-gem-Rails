@@ -1,0 +1,26 @@
+<table>
+ <tr>
+  <td>Name:</td>
+  <td><%= @movie.name %></td>
+ </tr>
+ <tr>
+  <td>Year</td>
+  <td><%= @movie.year %></td>
+ </tr>
+ <tr>
+  <td>Plot:</td>
+  <td><%= @movie.plot %></td>
+ </tr>
+ <tr>
+  <td>Poster:</td>
+  <td> <img src="<%= @movie.poster %>" /></td>
+ </tr>
+ <tr>
+  <td>Cast:</td>
+  <td><ul><% @cast.each do |member| %>
+	<li><%= member.name %> </li>
+	<% end %>
+  </ul>
+  </td>
+ </tr>
+</table>
